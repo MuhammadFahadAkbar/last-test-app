@@ -7,7 +7,7 @@ const sectorRoutes = require("./routes/sectors");
 const {MONGO_URI} = require("./config/keys")
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 app.use(cors());
 app.use(express.json());
