@@ -31,7 +31,7 @@ mongoose
 //     })
 //     }
 
-    app.listen(80, () => {
+    app.listen(port, () => {
       console.log(`Database Connected and Server is running on port: ${port}`);
     }); 
       
