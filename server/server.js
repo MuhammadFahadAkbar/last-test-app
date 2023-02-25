@@ -21,15 +21,15 @@ mongoose
   })
   .then(() => {
 
-    if(process.env.NODE_ENV=='production'){
-      const path = require('path')
+//    if(process.env.NODE_ENV=='production'){
+//       const path = require('path')
 
-    app.get('/', (req, res) => {
-      const clientBuildPath = path.join(__dirname, '..', 'client', 'build');
-      app.use(express.static(clientBuildPath));
-      res.sendFile(path.join(clientBuildPath, 'index.html'));
-    })
-    }
+//     app.get('/', (req, res) => {
+//       const clientBuildPath = path.join(__dirname, '..', 'client', 'build');
+//       app.use(express.static(clientBuildPath));
+//       res.sendFile(path.join(clientBuildPath, 'index.html'));
+//     })
+//     }
 
     app.listen(80, () => {
       console.log(`Database Connected and Server is running on port: ${port}`);
