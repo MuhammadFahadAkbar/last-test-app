@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 const formRoutes = require("./routes/forms");
 const sectorRoutes = require("./routes/sectors");
+const http = require('http');
 const {MONGO_URI} = require("./config/keys")
 
 const app = express();
@@ -20,6 +21,8 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
+  
+      http.createServer(app).listen(process.env.PORT, async ()=>{
 
 //    if(process.env.NODE_ENV=='production'){
 //       const path = require('path')
@@ -30,11 +33,12 @@ mongoose
 //       res.sendFile(path.join(clientBuildPath, 'index.html'));
 //     })
 //     }
-
-    app.listen(port, () => {
-      console.log(`Database Connected and Server is running on port: ${port}`);
-    }); 
+console.log(`Database Connected and Server is running on port: ${port}`);
+//     app.listen(port, () => {
+//       console.log(`Database Connected and Server is running on port: ${port}`);
+//     }); 
       
+}) 
   })
   .catch((err) => console.log(err));
 
